@@ -11,7 +11,6 @@
     <fullyQualifiedTypeName name="pageObjectPackage.PO_001_HomePage"/>
     <fullyQualifiedTypeName name="org.openqa.selenium.WebDriver"/>
     <fullyQualifiedTypeName name="pageObjectPackage.PO_002_RegistrationPage"/>
-    <fullyQualifiedTypeName name="java.lang.Thread"/>
     <fullyQualifiedTypeName name="org.testng.asserts.SoftAssert"/>
     <fullyQualifiedTypeName name="pageObjectPackage.PO_003_CustomerCreatedPage"/>
     <fullyQualifiedTypeName name="basePackage.DriverSetup"/>
@@ -25,10 +24,12 @@
     <fullyQualifiedTypeName name="pageObjectPackage.PO_007_TransferFundsPage"/>
     <fullyQualifiedTypeName name="pageObjectPackage.PO_008_AccountDetailsPage"/>
     <fullyQualifiedTypeName name="org.openqa.selenium.remote.internal.WebElementToJsonConverter"/>
+    <fullyQualifiedTypeName name="pageObjectPackage.PO_009_FindTransactionsPage"/>
+    <fullyQualifiedTypeName name="java.time.Duration"/>
+    <fullyQualifiedTypeName name="java.lang.Thread"/>
+    <fullyQualifiedTypeName name="pageObjectPackage.PO_010_UpdateProfilePage"/>
     <fullyQualifiedTypeName name="org.openqa.selenium.support.FindBy"/>
     <fullyQualifiedTypeName name="org.openqa.selenium.WebElement"/>
-    <fullyQualifiedTypeName name="commonPackage.CommonMethods"/>
-    <fullyQualifiedTypeName name="pageObjectPackage.PO_009_FindTransactionsPage"/>
     <fullyQualifiedTypeName name="org.openqa.selenium.By"/>
-    <fullyQualifiedTypeName name="java.time.Duration"/>
+    <fullyQualifiedTypeName name="commonPackage.CommonMethods"/>
 </qualifiedTypeNameHistroy>
