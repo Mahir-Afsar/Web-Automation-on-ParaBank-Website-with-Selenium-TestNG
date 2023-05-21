@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="org.testng.annotations.BeforeSuite"/>
+    <fullyQualifiedTypeName name="io.github.bonigarcia.wdm.WebDriverManager"/>
+    <fullyQualifiedTypeName name="org.openqa.selenium.chrome.ChromeDriver"/>
+    <fullyQualifiedTypeName name="org.testng.annotations.AfterSuite"/>
+    <fullyQualifiedTypeName name="org.testng.annotations.DataProvider"/>
+    <fullyQualifiedTypeName name="org.openqa.selenium.support.PageFactory"/>
+    <fullyQualifiedTypeName name="org.openqa.selenium.support.ui.WebDriverWait"/>
+    <fullyQualifiedTypeName name="org.openqa.selenium.support.ui.ExpectedConditions"/>
+    <fullyQualifiedTypeName name="pageObjectPackage.PO_001_HomePage"/>
+    <fullyQualifiedTypeName name="org.openqa.selenium.WebDriver"/>
+    <fullyQualifiedTypeName name="pageObjectPackage.PO_002_RegistrationPage"/>
+    <fullyQualifiedTypeName name="java.lang.Thread"/>
+    <fullyQualifiedTypeName name="org.testng.asserts.SoftAssert"/>
+    <fullyQualifiedTypeName name="pageObjectPackage.PO_003_CustomerCreatedPage"/>
+    <fullyQualifiedTypeName name="basePackage.DriverSetup"/>
+    <fullyQualifiedTypeName name="org.testng.annotations.Test"/>
+    <fullyQualifiedTypeName name="testDataPackage.DataSet"/>
+    <fullyQualifiedTypeName name="pageObjectPackage.PO_004_AccountsOverview"/>
+    <fullyQualifiedTypeName name="org.openqa.selenium.support.ui.Select"/>
+    <fullyQualifiedTypeName name="pageObjectPackage.PO_005_OpenNewAccountPage"/>
+    <fullyQualifiedTypeName name="io.qameta.allure.Step"/>
+    <fullyQualifiedTypeName name="pageObjectPackage.PO_006_OpenAccountPage"/>
+    <fullyQualifiedTypeName name="pageObjectPackage.PO_007_TransferFundsPage"/>
+    <fullyQualifiedTypeName name="pageObjectPackage.PO_008_AccountDetailsPage"/>
+    <fullyQualifiedTypeName name="org.openqa.selenium.remote.internal.WebElementToJsonConverter"/>
+    <fullyQualifiedTypeName name="org.openqa.selenium.support.FindBy"/>
+    <fullyQualifiedTypeName name="org.openqa.selenium.WebElement"/>
+    <fullyQualifiedTypeName name="commonPackage.CommonMethods"/>
+    <fullyQualifiedTypeName name="pageObjectPackage.PO_009_FindTransactionsPage"/>
+    <fullyQualifiedTypeName name="org.openqa.selenium.By"/>
+    <fullyQualifiedTypeName name="java.time.Duration"/>
+</qualifiedTypeNameHistroy>

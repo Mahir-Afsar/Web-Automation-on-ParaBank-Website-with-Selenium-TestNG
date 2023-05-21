@@ -1,0 +1,32 @@
+package pageObjectPackage;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+import commonPackage.CommonMethods;
+import io.qameta.allure.Step;
+
+public class PO_004_AccountsOverview extends CommonMethods{
+
+	WebDriver driver = null;
+	public PO_004_AccountsOverview(WebDriver driver) {
+		this.driver = driver;
+		PageFactory.initElements(driver, this);
+	}
+	
+	@FindBy(xpath = "//a[normalize-space()='Open New Account']")
+	public WebElement openNewAccountField;
+	
+	public String accountsOverviewTitle = "ParaBank | Accounts Overview";
+
+	@Step("Click on Open new Account")
+	public void  clickOnOpenNewAccount() {
+		clickElement(driver, openNewAccountField);
+	}
+	
+	@FindBy(xpath = "//a[@class='ng-binding']")
+	public WebElement existingAccountField;
+
+}

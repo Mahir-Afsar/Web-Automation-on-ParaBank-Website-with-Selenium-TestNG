@@ -1,0 +1,13 @@
+package testCasesPackage;
+
+import org.testng.annotations.Test;
+
+import basePackage.DriverSetup;
+
+public class TC001_CreateNewUser extends DriverSetup{
+	
+	@Test
+	public void registration() {
+		
+	}
+}

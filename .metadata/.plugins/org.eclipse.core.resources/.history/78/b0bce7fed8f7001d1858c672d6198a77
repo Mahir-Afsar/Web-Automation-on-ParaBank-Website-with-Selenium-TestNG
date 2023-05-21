@@ -1,0 +1,46 @@
+package pageObjectPackage;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+import commonPackage.CommonMethods;
+import io.qameta.allure.Step;
+
+public class PO_004_AccountsOverview extends CommonMethods{
+
+	WebDriver driver = null;
+	public PO_004_AccountsOverview(WebDriver driver) {
+		this.driver = driver;
+		PageFactory.initElements(driver, this);
+	}
+	
+	public By existingAccountFieldBy = By.xpath("//a[@class='ng-binding']");
+	public By defaultExistingAccountNumberBy = By.xpath("//a[@class='ng-binding']");
+	
+	@FindBy(xpath = "//a[normalize-space()='Open New Account']")
+	public WebElement openNewAccountField;
+	
+	public String accountsOverviewTitle = "ParaBank | Accounts Overview";
+
+	@Step("Click on Open new Account")
+	public void  clickOnOpenNewAccount() {
+		clickElement(driver, openNewAccountField);
+	}
+	
+	@FindBy(xpath = "//a[@class='ng-binding']")
+	public WebElement existingAccountField;
+	
+	@FindBy(xpath = "//tbody//tr[1]//td[1]//a")
+	public WebElement defaultExistingAccountNumber;
+	
+	@FindBy(xpath = "//tbody/tr[4]/td[1]/a")
+	public WebElement savingAccountFields;
+	
+	public void clickOnNewSavingAccount() {
+		clickElement(driver, savingAccountFields);
+	}
+	
+}

@@ -1,0 +1,35 @@
+package pageObjectPackage;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+import commonPackage.CommonMethods;
+
+public class PO_010_UpdateProfilePage extends CommonMethods{
+
+	WebDriver driver = null;
+	public PO_010_UpdateProfilePage(WebDriver driver) {
+		this.driver = driver;
+		PageFactory.initElements(driver, this);
+	}
+	
+	public By phoneNumberFieldBy = By.xpath("//input[@id='customer.phoneNumber']");
+	
+	@FindBy(xpath = "//input[@id='customer.phoneNumber']")
+	public WebElement phoneNumberField;
+	
+	public void updatePhoneNumber() {
+		phoneNumberField.clear();
+		phoneNumberField.sendKeys("121313131313131");
+	}
+	
+	@FindBy(xpath = "//input[@value='Update Profile']")
+	public WebElement updateProfileButtonField;
+	
+	public void clickOnUpdateProfileButton() {
+		clickElement(driver, updateProfileButtonField);
+	}
+}

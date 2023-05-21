@@ -1,0 +1,26 @@
+package pageObjectPackage;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+public class PO_007_TransferFundsPage {
+	
+	WebDriver driver = null;
+	public PO_007_TransferFundsPage(WebDriver driver) {
+		this.driver = driver;
+		PageFactory.initElements(driver, this);
+	}
+	
+	@FindBy(xpath = "//input[@id='amount']")
+	public WebElement amountField;
+	
+	@FindBy(xpath = "//select[@id='fromAccountId']")
+	public WebElement fromAccountIdField;
+	
+	@FindBy(xpath = "//select[@id='toAccountId']")
+	public WebElement toAccountIdField;
+	
+	
+}

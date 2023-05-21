@@ -1,0 +1,35 @@
+package testDataPackage;
+
+import org.testng.annotations.DataProvider;
+
+public class DataSet {
+	
+	@DataProvider(name = "registrationData")
+	public static Object dataset() {
+		Object[][] obj = 
+			{
+					{					
+						"Mahir","Afsar","Mirpur","Dhaka","Mirpur-2","1216","01202309325","123456789", "MahirAfsar105", "afsar@123", "afsar@123"
+					},
+					{					
+						"Afsar","mahir","Mirpur","Dhaka","Mirpur-2","1216","01102309325","123456789", "MahirAfsar104", "afsar@123", "afsar@123"
+					}				
+			};
+			return obj;
+	}
+	
+	@DataProvider(name = "userInfo")
+	public static Object loginset() {
+		Object[][] obj = 
+		{
+				{
+					"MahirAfsar105","afsar@123"
+				},
+				{
+					"MahirAfsar104","afsar@123"
+				}
+		};
+		return obj;
+	}
+
+}

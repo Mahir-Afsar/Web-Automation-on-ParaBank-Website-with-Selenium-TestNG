@@ -1,0 +1,24 @@
+package testCasesPackage;
+
+import java.time.Duration;
+
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.Test;
+
+import basePackage.DriverSetup;
+import pageObjectPackage.PO_001_HomePage;
+import testDataPackage.DataSet;
+
+public class TC001_CreateNewUser extends DriverSetup{
+	
+	@Test(dataProvider = "registrationData",dataProviderClass = DataSet.class)
+	public void registration(String firstName, String lastName, String address, String city, String state, 
+			String zipCode, String phoneNumber, String ssn, String UserName, String password, String confirmPassword) throws InterruptedException {
+		
+		PO_001_HomePage homePage = new PO_001_HomePage(driver);
+		
+		// click on register 
+		homePage.clickOnRegister();
+//		Thread.sleep(3000);
+	}
+}

@@ -1,0 +1,46 @@
+package testCasesPackage;
+
+import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
+
+import basePackage.DriverSetup;
+import pageObjectPackage.PO_001_HomePage;
+import pageObjectPackage.PO_002_RegistrationPage;
+import pageObjectPackage.PO_003_CustomerCreatedPage;
+import testDataPackage.DataSet;
+
+public class TC001_CreateNewUser extends DriverSetup{
+	
+	@Test(dataProvider = "registrationData",dataProviderClass = DataSet.class)
+	public void registration(String firstName, String lastName, String address, String city, String state, 
+			String zipCode, String phoneNumber, String ssn, String UserName, String password, String confirmPassword) throws InterruptedException {
+		
+		SoftAssert softAssert = new SoftAssert();
+		PO_001_HomePage homePage = new PO_001_HomePage(driver);
+		PO_002_RegistrationPage registrationPage = new PO_002_RegistrationPage(driver);
+		PO_003_CustomerCreatedPage customerCreatedPage = new PO_003_CustomerCreatedPage(driver);
+		
+		// click on register 
+		homePage.clickOnRegister();
+		
+		//Assertion of register page
+		softAssert.assertEquals(registrationPage.getTitle(driver), registrationPage.registrationPageTitle);
+		
+		// fill the registration information
+		registrationPage.fillRegistrationInformation(firstName, lastName, address, city, state, zipCode, phoneNumber, ssn, UserName, password, confirmPassword);
+		
+		// Click on register button
+		registrationPage.clickOnRegisterButton();
+		
+		// Assertion of customer created Page
+		softAssert.assertEquals(customerCreatedPage.getTitle(driver), customerCreatedPage.customerCreatedPageTitle);
+		
+		//click on logout button
+		customerCreatedPage.clickOnLogOutButton();
+		
+		//Assert All
+		softAssert.assertAll();
+		
+		
+	}
+}

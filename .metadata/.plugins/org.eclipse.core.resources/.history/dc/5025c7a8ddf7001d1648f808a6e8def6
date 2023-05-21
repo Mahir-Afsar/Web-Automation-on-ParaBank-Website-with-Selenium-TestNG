@@ -1,0 +1,48 @@
+package pageObjectPackage;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+import commonPackage.CommonMethods;
+
+public class PO_007_TransferFundsPage extends CommonMethods{
+	
+	WebDriver driver = null;
+	public PO_007_TransferFundsPage(WebDriver driver) {
+		this.driver = driver;
+		PageFactory.initElements(driver, this);
+	}
+	
+	public By amountFieldBy = By.xpath("//input[@id='amount']");
+	
+	@FindBy(xpath = "//input[@id='amount']")
+	public WebElement amountField;
+	
+	@FindBy(xpath = "//select[@id='fromAccountId']")
+	public WebElement fromAccountIdField;
+	
+	@FindBy(xpath = "//select[@id='toAccountId']")
+	public WebElement toAccountIdField;
+	
+	@FindBy(xpath = "//input[@value='Transfer']")
+	public WebElement transferButtonField;
+	
+	public void tranferAmount(String value) {
+		sendText(amountField, value);
+	}
+	
+	public void selectFromAccountValue(String value) {
+		selectItem(fromAccountIdField, value);
+	}
+	
+	public void selectToAccountValue(String value) {
+		selectItem(toAccountIdField, value);
+	}
+	
+	public void clickOnTranferButton() {
+		clickElement(driver, transferButtonField);
+	}
+}

@@ -1,0 +1,116 @@
+package testCasesPackage;
+
+import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
+
+import basePackage.DriverSetup;
+import pageObjectPackage.PO_001_HomePage;
+import pageObjectPackage.PO_004_AccountsOverview;
+import pageObjectPackage.PO_005_OpenNewAccountPage;
+import pageObjectPackage.PO_006_OpenAccountPage;
+import testDataPackage.DataSet;
+
+public class TC002_Login_CreateAccount_TransferMoney extends DriverSetup{
+	
+	@Test(dataProvider = "userInfo",dataProviderClass = DataSet.class)
+	public void login_CreateAccount_TranferMoney(String userName, String password) throws InterruptedException {
+		
+		SoftAssert softAssert = new SoftAssert();
+		PO_001_HomePage homePage = new PO_001_HomePage(driver);
+		PO_004_AccountsOverview accountsOverviewPage = new PO_004_AccountsOverview(driver);
+		PO_005_OpenNewAccountPage openNewAccountPage = new PO_005_OpenNewAccountPage(driver);
+		PO_006_OpenAccountPage openAccountPage = new PO_006_OpenAccountPage(driver);
+		String checkingAccountValue = "0";
+		String savingAccountValue = "1";
+		
+		
+		// fill the login information
+		homePage.fillLoginInformation(userName, password);
+		
+		//click on login button
+		homePage.clickOnLoginButton();
+		
+		//Assertion of Accounts Overview page
+		softAssert.assertEquals(accountsOverviewPage.getTitle(driver), accountsOverviewPage.accountsOverviewTitle);
+		
+		Thread.sleep(3000);
+		String existingAccountNumberByDefault1 = accountsOverviewPage.existingAccountField.getText();
+		
+		//Click on Open new Account
+		accountsOverviewPage.clickOnOpenNewAccount();
+		
+		Thread.sleep(3000);
+		
+		//select checking account
+		openNewAccountPage.selectTypeOfAccount(checkingAccountValue);
+		
+		//select existing by default account
+		openNewAccountPage.existingAccountNumber(existingAccountNumberByDefault1);
+		
+		//click on open a new account button
+		openNewAccountPage.clickOnOpenNewAccountButton();
+		Thread.sleep(3000);
+		
+		// open account page 
+		// get checking account number
+		String checkingAccountNumber = openAccountPage.newAccountIdValueField.getText();
+		System.out.println("checkingAccountNumber: " + checkingAccountNumber);
+		Thread.sleep(3000);
+		
+		//click on accounts overview
+		openAccountPage.clickOnAccountsOverview();
+		
+		Thread.sleep(3000);
+		//get first account number
+		String defaultExistingAccountNumber2 = accountsOverviewPage.defaultExistingAccountNumber.getText();
+		
+		//Click on Open new Account
+		accountsOverviewPage.clickOnOpenNewAccount();
+		
+		//select saving account
+		openNewAccountPage.selectTypeOfAccount(savingAccountValue);
+		
+		Thread.sleep(3000);
+		//select existing by default account
+		openNewAccountPage.existingAccountNumber(defaultExistingAccountNumber2);
+		
+		//click on open a new account button
+		openNewAccountPage.clickOnOpenNewAccountButton();
+		Thread.sleep(3000);
+		
+		// open account page 
+		// get saving account number 1
+		String savingAccountNumber1 = openAccountPage.newAccountIdValueField.getText();
+		System.out.println("savingAccountNumber 1: " + savingAccountNumber1);
+		Thread.sleep(3000);
+		
+		//click on accounts overview
+		openAccountPage.clickOnAccountsOverview();
+		
+		Thread.sleep(3000);
+		//get first account number
+		String defaultExistingAccountNumber3 = accountsOverviewPage.defaultExistingAccountNumber.getText();
+	
+		//Click on Open new Account
+		accountsOverviewPage.clickOnOpenNewAccount();
+	
+		//select saving account
+		openNewAccountPage.selectTypeOfAccount(savingAccountValue);
+		
+		Thread.sleep(3000);
+		//select existing by default account
+		openNewAccountPage.existingAccountNumber(defaultExistingAccountNumber3);
+		
+		//click on open a new account button
+		openNewAccountPage.clickOnOpenNewAccountButton();
+		Thread.sleep(4000);
+		
+		// get saving account number 2
+		String savingAccountNumber2 = openAccountPage.newAccountIdValueField.getText();
+		System.out.println("savingAccountNumber 2: " + savingAccountNumber2);
+		
+		// click on transfer funds
+		openAccountPage.clickOnTansferFunds();
+				
+	}
+}

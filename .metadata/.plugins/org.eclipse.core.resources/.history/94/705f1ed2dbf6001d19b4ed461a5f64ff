@@ -1,0 +1,5 @@
+package testCasesPackage;
+
+public class TC001_CreateNewUser {
+
+}
