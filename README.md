@@ -55,4 +55,7 @@ TestNG is a testing framework for Java that is designed to be more flexible and 
 
 ![](https://raw.githubusercontent.com/Mahir-Afsar/Web-Automation-on-ParaBank-Website-with-Selenium-TestNG/main/ScreenShots/Allure_Behaviors.png)
 
+## Automation Output Video:
+
+https://github.com/Mahir-Afsar/Web-Automation-on-ParaBank-Website-with-Selenium-TestNG/assets/123372012/e2d34dc4-30f2-4bbb-a50f-d6000562c135
 
